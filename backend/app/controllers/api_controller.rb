@@ -2,7 +2,6 @@ class ApiController < ApplicationController
     before_action :validate
     
     def index
-       
         case params[:type]
         render json: {:data => {:msg => 'Success'}}, status: 200
     end

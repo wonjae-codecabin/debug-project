@@ -4,8 +4,8 @@ class ApiController < ApplicationController
     def index
        
         case params[:type]
-        when 'cvm' 
-        end
+        # when 'cvm' 
+        # end
         render json: {:data => {:msg => 'Success'}}, status: 200
     end
 

@@ -42,8 +42,6 @@ export default {
   modules: [
   ],
   env: {
-    VUE_APP_API_TOKEN: "9c971cf2-4c4a-46bb-a298-41859e419c06",
-    VUE_APP_API_URL: "http://localhost:3001",
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

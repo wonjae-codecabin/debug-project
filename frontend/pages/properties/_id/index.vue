@@ -1,15 +1,16 @@
 <template>
 <div>
-    <Sidebar />
-    <div class="h-screen ml-48 border z-50">
+    <Sidebar v-if="generalAccess == false" />
+    <div class="h-screen border z-50" :class="generalAccess == false ? 'ml-48': ''">
 
         <div class="py-5 px-10 rounded w-full barlow-bold text-2xl border-b bg-white rounded-tl-3xl uppercase grid grid-cols-6 top-0">
             <span class="col-span-5 flex">
-                <nuxt-link :to="`/properties`" class="text-gray-600">Properties</nuxt-link>
+                <nuxt-link :to="`/properties`" v-if="generalAccess == false" class="text-gray-600">Properties</nuxt-link>
+                <span class="text-gray-600" v-else>Properties</span>
                 <span> > </span>
                 <span>{{ property.town_or_suburb}}</span>
             </span>
-            <button type="button" class="col-span-1 group w-full bg-white rounded-md px-3.5 py-2 text-sm text-left font-medium text-gray-700 bg-white" x-ref="button">
+            <button v-if="generalAccess == false"  type="button" class="col-span-1 group w-full bg-white rounded-md px-3.5 py-2 text-sm text-left font-medium text-gray-700 bg-white" x-ref="button">
                 <span class="flex w-full justify-between items-center">
                     <span class="flex min-w-0 items-center justify-between space-x-3">
                         <img class="w-10 h-10 bg-white rounded-full flex-shrink-0" src="https://source.unsplash.com/random/?profile,man" alt="">
@@ -35,7 +36,7 @@
                                 <circle cx="11" cy="11" r="6"></circle>
                             </svg><span class="flex-auto">Quick search...</span></button>
                     </div>
-                    <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+                    <div v-if="generalAccess == false"  class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
                         <button type="button" class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 text-sm font-medium text-white shadow-sm bg-gray-900">
                             Add Trap
                         </button>
@@ -128,6 +129,7 @@ export default {
             loading: true,
             showModal: false,
             property: {},
+            generalAccess: false
         }
     },
 
@@ -160,6 +162,8 @@ export default {
 
     mounted() {
         this.init();
+
+        this.$route.query.generalAccess != undefined ? this.generalAccess = true : null
     }
 }
 </script>

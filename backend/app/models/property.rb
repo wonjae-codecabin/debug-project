@@ -39,7 +39,6 @@ class Property < ApplicationRecord
             trap = Trap.find_by(
               trap_site_id: row[4]
             )
-            
             Entry.create(
               trap_id: trap.id,
               unique_identifier: row[0],

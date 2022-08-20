@@ -27,6 +27,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/vuex-persist.js', mode: "client" },
+    { src : '~/plugins/vue-apexchart.js', mode : "client" }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -42,6 +43,8 @@ export default {
   modules: [
   ],
   env: {
+    VUE_APP_API_TOKEN: "9c971cf2-4c4a-46bb-a298-41859e419c06",
+    VUE_APP_API_URL: "https://api.debugsa.info",
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

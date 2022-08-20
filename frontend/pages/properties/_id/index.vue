@@ -14,9 +14,11 @@
             <div>
                 <div class="sm:flex sm:items-center mb-5">
                     <div class="sm:flex-auto">
-                        <p class="mt-2 text-sm text-gray-700">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae necessitatibus a, natus velit reiciendis animi blanditiis tempore voluptate est ex soluta! In ipsam deleniti laboriosam magnam. Quaerat eum deserunt alias.
-                        </p>
+                          <button type="button" class="hidden sm:flex items-center w-6/12 text-left space-x-3 px-4 h-12 bg-white shadow-sm rounded-lg border text-gray-500">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-none text-slate-300 dark:text-gray-500" aria-hidden="true">
+                                <path d="m19 19-3.5-3.5"></path>
+                                <circle cx="11" cy="11" r="6"></circle>
+                            </svg><span class="flex-auto">Quick search...</span></button>
                     </div>
                     <div class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
                         <button type="button" class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 text-sm font-medium text-white shadow-sm bg-gray-900">

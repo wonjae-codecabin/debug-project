@@ -3,18 +3,33 @@
     <Sidebar />
     <div class="h-screen ml-48 border z-50">
 
-        <div class="py-5 px-24 rounded w-full barlow-bold text-2xl border-b bg-white rounded-tl-3xl uppercase ">
-            <nuxt-link :to="`/properties`" class="text-gray-600">Properties</nuxt-link>
-            <span> > </span>
-            <span>{{ property.town_or_suburb}}</span>
+        <div class="py-5 px-10 rounded w-full barlow-bold text-2xl border-b bg-white rounded-tl-3xl uppercase grid grid-cols-6 top-0">
+            <span class="col-span-5 flex">
+                <nuxt-link :to="`/properties`" class="text-gray-600">Properties</nuxt-link>
+                <span> > </span>
+                <span>{{ property.town_or_suburb}}</span>
+            </span>
+            <button type="button" class="col-span-1 group w-full bg-white rounded-md px-3.5 py-2 text-sm text-left font-medium text-gray-700 bg-white" x-ref="button">
+                <span class="flex w-full justify-between items-center">
+                    <span class="flex min-w-0 items-center justify-between space-x-3">
+                        <img class="w-10 h-10 bg-white rounded-full flex-shrink-0" src="https://source.unsplash.com/random/?profile,man" alt="">
+                        <span class="flex-1 flex flex-col min-w-0">
+                            <span class="text-gray-900 text-sm font-medium truncate">Matthew Scott</span>
+                            <span class="text-gray-500 text-sm truncate">@matt</span>
+                        </span>
+                    </span>
+                    <svg class="flex-shrink-0 h-5 w-5 text-gray-400 group-hover:text-gray-500" x-description="Heroicon name: solid/selector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </span>
+            </button>
         </div>
 
         <main class="px-24 py-10 bg-gray-50" style="min-height: 90vh;">
-
             <div>
                 <div class="sm:flex sm:items-center mb-5">
                     <div class="sm:flex-auto">
-                          <button type="button" class="hidden sm:flex items-center w-6/12 text-left space-x-3 px-4 h-12 bg-white shadow-sm rounded-lg border text-gray-500">
+                        <button type="button" class="hidden sm:flex items-center w-6/12 text-left space-x-3 px-4 h-12 bg-white shadow-sm rounded-lg border text-gray-500">
                             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-none text-slate-300 dark:text-gray-500" aria-hidden="true">
                                 <path d="m19 19-3.5-3.5"></path>
                                 <circle cx="11" cy="11" r="6"></circle>
@@ -40,21 +55,24 @@
                                             <th class="col-span-2 py-3.5 text-gray-900 text-left px-6">
                                                 Status
                                             </th>
-                                            <th class="col-span-5 py-3.5 text-gray-900 text-left px-6">
+                                            <th class="col-span-3 py-3.5 text-gray-900 text-left px-6">
                                                 Activity Date
                                             </th>
+                                            <th class="col-span-2 py-3.5 text-gray-900 text-left px-6">
+                                                Corrective Action
+                                            </th>
                                             <th class="col-span-3 py-3.5 text-gray-900 text-left px-6">
-                                                
+
                                             </th>
 
                                         </tr>
                                     </thead>
-                                     <tbody v-if="loading" class="divide-y divide-gray-200 bg-white">
+                                    <tbody v-if="loading" class="divide-y divide-gray-200 bg-white">
                                         <tr class="w-full grid grid-cols-12">
                                             <td class="col-span-12 py-3.5 text-gray-900 text-left px-6">
-                                               <Icon :object="{title: 'preloader', class: 'h-8 w-8', stroke: '#000000'}"/>
+                                                <Icon :object="{title: 'preloader', class: 'h-8 w-8', stroke: '#000000'}" />
                                             </td>
-                                            
+
                                         </tr>
                                     </tbody>
                                     <tbody v-else class="divide-y divide-gray-200 bg-white">
@@ -70,13 +88,16 @@
                                                     <Icon :object="{title: 'x', class: 'h-5 w-5'}" />
                                                 </span>
                                             </td>
-                                             <td class="col-span-5 py-3.5 text-gray-900 text-left px-6">
+                                            <td class="col-span-3 py-3.5 text-gray-900 text-left px-6">
                                                 {{ getTheLatestEntry(trap)[0].activity_date}}
                                             </td>
+                                            <td class="col-span-2 py-3.5 text-gray-900 text-left px-6">
+                                                {{ getTheLatestEntry(trap)[0].corrective_action_msg != null ? 'Completed' : '' }}
+                                            </td>
                                             <td class="col-span-3 py-3.5 text-gray-900 px-6 grid grid-cols-3 gap-x-2">
-                                                <button class="border px-2 py-1 rounded" @click="setActive(trap, getTheLatestEntry(trap)), showModal = true">View</button>
-                                                <button class="border px-2 py-1 rounded">Edit</button>
-                                                <button class="border px-2 py-1 rounded">Delete</button>
+                                                <button class="border px-2 py-1 rounded hover:bg-gray-900 hover:text-white" @click="setActive(trap, getTheLatestEntry(trap)), showModal = true">View</button>
+                                                <button class="border px-2 py-1 rounded hover:bg-gray-900 hover:text-white">Edit</button>
+                                                <button class="border px-2 py-1 rounded hover:bg-gray-900 hover:text-white">Delete</button>
                                             </td>
 
                                         </tr>
@@ -125,14 +146,14 @@ export default {
             let allEntries = this.property.entries.filter(el => el.trap_id == trap.id)
             return allEntries
         },
-        setActive(trap, entries){
+        setActive(trap, entries) {
             trap.entries = entries
-           
+
             store.commit('resource/set', {
                 activeObject: trap
             })
         },
-        close(){
+        close() {
             this.showModal = false
         }
     },

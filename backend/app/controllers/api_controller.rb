@@ -5,7 +5,14 @@ class ApiController < ApplicationController
         case params[:type]
         when 'properties'
             
-            render json:{:data => Property.all}, :status => 200
+            final = []
+            Property.all.each do |property|
+
+                obj = property.attributes.merge({traps: property.traps})
+                final.push(obj)
+            end
+           
+            render json:{:data => final}, :status => 200
         when 'entries'
 
             property = Property.find_by(id: params[:id])

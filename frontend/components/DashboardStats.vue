@@ -6,7 +6,7 @@
         <div class="px-4 py-5 sm:p-6">
             <dt class="text-base font-normal text-gray-900">Total flies found</dt>
             <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
-                <div class="flex items-baseline text-2xl font-semibold text-indigo-600">
+                <div class="flex items-baseline text-2xl font-semibold ">
                     71
                     <span class="ml-2 text-sm font-medium text-gray-500"> from 32 </span>
                 </div>
@@ -25,7 +25,7 @@
         <div class="px-4 py-5 sm:p-6">
             <dt class="text-base font-normal text-gray-900">Avg. Open Rate</dt>
             <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
-                <div class="flex items-baseline text-2xl font-semibold text-indigo-600">
+                <div class="flex items-baseline text-2xl font-semibold ">
                     58.16%
                     <span class="ml-2 text-sm font-medium text-gray-500"> from 56.14% </span>
                 </div>
@@ -44,7 +44,7 @@
         <div class="px-4 py-5 sm:p-6">
             <dt class="text-base font-normal text-gray-900">Avg. Corrective Action Rate</dt>
             <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
-                <div class="flex items-baseline text-2xl font-semibold text-indigo-600">
+                <div class="flex items-baseline text-2xl font-semibold ">
                     24.57%
                     <span class="ml-2 text-sm font-medium text-gray-500"> from 28.62% </span>
                 </div>

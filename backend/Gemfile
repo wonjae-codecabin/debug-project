@@ -54,6 +54,7 @@ end
 
 
 #custom
+gem 'aws-sdk', '~> 3'
 gem "figaro"
 gem 'rack-cors'
 gem 'nokogiri'

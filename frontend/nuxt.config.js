@@ -21,6 +21,9 @@ export default {
     '~/assets/css/custom.css',
     '~/assets/css/font.css',
   ],
+  generate: {
+    fallback: true
+  }
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/vuex-persist.js', mode: "client" },
@@ -45,7 +48,4 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
-  generate: {
-    fallback: true
-  }
 }

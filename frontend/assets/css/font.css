@@ -1,0 +1,42 @@
+@font-face {
+    font-family: barlow_bold;
+    src: url('./font/Barlow/Outfit-Bold.ttf');
+}
+@font-face {
+    font-family: barlow_medium;
+    src: url('./font/Barlow/Outfit-Medium.ttf');
+}
+@font-face {
+    font-family: barlow_light;
+    src: url('./font/Barlow/Outfit-Light.ttf');
+}
+@font-face {
+    font-family: barlow_thin;
+    src: url('./font/Barlow/Outfit-Thin.ttf');
+}
+@font-face {
+    font-family: barlow_black;
+    src: url('./font/Barlow/Outfit-Black.ttf');
+}
+@font-face {
+    font-family: barlow_regular;
+    src: url('./font/Barlow/Outfit-Regular.ttf');
+}
+.barlow-bold{
+    font-family: barlow_bold;
+}
+.barlow-medium{
+    font-family: barlow_medium;
+}
+.barlow-light{
+    font-family: barlow_light;
+}
+.barlow-black{
+    font-family: barlow_black;
+}
+.barlow-thin{
+    font-family: barlow_thin;
+}
+.barlow-regular{
+    font-family: barlow_regular;
+}

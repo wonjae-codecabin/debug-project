@@ -26,7 +26,7 @@
             </button>
         </div>
 
-        <main class="px-24 py-10 bg-gray-50" style="min-height: 90vh;">
+        <main class="lg:px-24 py-10 bg-gray-50" style="min-height: 90vh;">
             <div>
                 <div class="sm:flex sm:items-center mb-5">
                     <div class="sm:flex-auto">
@@ -50,16 +50,16 @@
                                 <table class="min-w-full divide-y divide-gray-300 w-full">
                                     <thead class="w-full">
                                         <tr class="grid grid-cols-12 w-full">
-                                            <th class="col-span-2 py-3.5 text-gray-900 text-left px-6">
+                                            <th class="col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
                                                 Trap Id
                                             </th>
-                                            <th class="col-span-2 py-3.5 text-gray-900 text-left px-6">
+                                            <th class="col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
                                                 Status
                                             </th>
-                                            <th class="col-span-3 py-3.5 text-gray-900 text-left px-6">
+                                            <th class="col-span-3 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
                                                 Activity Date
                                             </th>
-                                            <th class="col-span-2 py-3.5 text-gray-900 text-left px-6">
+                                            <th class="hidden lg:block col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
                                                 Corrective Action
                                             </th>
                                             <th class="col-span-3 py-3.5 text-gray-900 text-left px-6">
@@ -78,10 +78,10 @@
                                     </tbody>
                                     <tbody v-else class="divide-y divide-gray-200 bg-white">
                                         <tr v-for="(trap, index) in property.traps" v-bind:key="index" class="w-full grid grid-cols-12">
-                                            <td class="col-span-2 py-3.5 text-gray-900 text-left px-6">
+                                            <td class="col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
                                                 {{ trap.trap_site_id }}
                                             </td>
-                                            <td class="col-span-2 py-3.5 text-gray-900 text-left px-6 flex">
+                                            <td class="col-span-2 py-3.5 text-gray-900 text-left px-6 flex text-xs sm:text-base">
                                                 <span v-if="getTheLatestEntry(trap)[0].target_spp == 'Absent'" class="p-1 rounded-full bg-green-600 h-8 w-8 flex items-center justify-center text-white">
                                                     <Icon :object="{title: 'check', class: 'h-5 w-5'}" />
                                                 </span>
@@ -89,16 +89,16 @@
                                                     <Icon :object="{title: 'x', class: 'h-5 w-5'}" />
                                                 </span>
                                             </td>
-                                            <td class="col-span-3 py-3.5 text-gray-900 text-left px-6">
+                                            <td class="col-span-3 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
                                                 {{ getTheLatestEntry(trap)[0].activity_date}}
                                             </td>
-                                            <td class="col-span-2 py-3.5 text-gray-900 text-left px-6">
+                                            <td class="hidden lg:block col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
                                                 {{ getTheLatestEntry(trap)[0].corrective_action_msg != null ? 'Completed' : '' }}
                                             </td>
-                                            <td class="col-span-3 py-3.5 text-gray-900 px-6 grid grid-cols-3 gap-x-2">
+                                            <td class="col-span-5 lg:col-span-3 py-3.5 text-gray-900 px-6 grid grid-cols-1 lg:grid-cols-3 gap-x-2 text-xs sm:text-base">
                                                 <button class="border px-2 py-1 rounded hover:bg-gray-900 hover:text-white" @click="setActive(trap, getTheLatestEntry(trap)), showModal = true">View</button>
-                                                <button class="border px-2 py-1 rounded hover:bg-gray-900 hover:text-white">Edit</button>
-                                                <button class="border px-2 py-1 rounded hover:bg-gray-900 hover:text-white">Delete</button>
+                                                <button  v-if="generalAccess == false" class="border px-2 py-1 rounded hover:bg-gray-900 hover:text-white">Edit</button>
+                                                <button  v-if="generalAccess == false" class="border px-2 py-1 rounded hover:bg-gray-900 hover:text-white">Delete</button>
                                             </td>
 
                                         </tr>

@@ -5,7 +5,8 @@ export const ResourceModule = {
   namespaced: true,
   state: {
     properties: [],
-    activeObject: {}
+    activeObject: {},
+    menu: true
   },
   actions: {
    
@@ -84,6 +85,7 @@ export const ResourceModule = {
     set(state, payload) {
       payload['properties'] != undefined ? state.properties = payload['properties'] : null
       payload['activeObject'] != undefined ? state.activeObject = payload['activeObject'] : null
+      payload['menu'] != undefined ? state.menu = payload['menu'] : null
     },
   
   },

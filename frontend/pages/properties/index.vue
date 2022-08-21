@@ -1,13 +1,19 @@
 <template>
 <div>
     <Sidebar />
-    <div class="h-screen ml-48 border-t z-50">
+    <div class="h-screen lg:ml-48 border-t z-50">
 
-        <div class="py-5 px-10 rounded w-full barlow-bold text-2xl border-b bg-white rounded-tl-3xl uppercase grid grid-cols-6 top-0">
-            <span class="col-span-5">
-                Properties
+        <div class="py-5 px-10 rounded w-full barlow-bold text-base lg:text-2xl border-b bg-white rounded-tl-3xl uppercase grid grid-cols-6 top-0">
+
+            <span class="col-span-5 flex items-center">
+                <span @click="manageSidebar(true)" class="mr-5 lg:hidden " :class="`${menu == true ? 'block' : ''}`">
+                    <Icon :object="{title: 'mobile-menu', class: 'h-5 w-5 text-black'}" />
+                </span>
+                <span>
+                    Properties
+                </span>
             </span>
-            <button type="button" class="col-span-1 group w-full bg-white rounded-md px-3.5 py-2 text-sm text-left font-medium text-gray-700 bg-white"  x-ref="button" >
+            <button type="button" class="hidden lg:block col-span-1 group w-full bg-white rounded-md px-3.5 py-2 text-sm text-left font-medium text-gray-700 bg-white" x-ref="button">
                 <span class="flex w-full justify-between items-center">
                     <span class="flex min-w-0 items-center justify-between space-x-3">
                         <img class="w-10 h-10 bg-white rounded-full flex-shrink-0" src="https://source.unsplash.com/random/?profile,man" alt="">
@@ -23,7 +29,7 @@
             </button>
         </div>
 
-        <main class="px-10 py-10 bg-gray-50" style="min-height: 90vh;">
+        <main class="px-5 py-10 bg-gray-50" style="min-height: 90vh;">
 
             <div>
                 <div class="sm:flex sm:items-center mb-5">
@@ -46,14 +52,14 @@
                     <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
                             <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg w-full">
-                                <table class="min-w-full divide-y divide-gray-300 w-full">
+                                <table class="min-w-full divide-y divide-gray-300 w-full ">
                                     <thead class="w-full">
                                         <tr class="grid grid-cols-12 w-full">
 
-                                            <th class="col-span-7 py-3.5 text-gray-900 text-left px-6">
+                                            <th class="col-span-7 py-3.5 text-gray-900 text-left px-6 text-xs lg:text-base">
                                                 Name
                                             </th>
-                                            <th class="col-span-2 py-3.5 text-gray-900 text-left px-6">
+                                            <th class="col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs lg:text-base">
                                                 Number of traps
                                             </th>
                                             <th class="col-span-3 py-3.5 text-gray-900 text-left px-6">
@@ -69,18 +75,18 @@
 
                                         </tr>
                                     </tbody>
-                                    <tbody v-else class="divide-y divide-gray-200 bg-white">
-                                        <tr v-for="(el, index) in items" v-bind:key="index" class="w-full grid grid-cols-12">
+                                    <tbody v-else class="divide-y divide-gray-200 bg-white ">
+                                        <tr v-for="(el, index) in items" v-bind:key="index" class="w-full grid grid-cols-12 text-xs lg:text-base">
                                             <td class="col-span-7 py-3.5 text-gray-900 text-left px-6">
                                                 {{ el.town_or_suburb }}
                                             </td>
-                                            <td class="col-span-2 py-3.5 text-gray-900 text-left px-6">
+                                            <td class="col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs lg:text-base">
                                                 {{ el.traps.length }}
                                             </td>
-                                            <td class="col-span-3 py-3.5 text-gray-900 px-6 grid grid-cols-3 gap-x-2">
+                                            <td class="col-span-3 py-3.5 text-gray-900 px-6 grid grid-cols-1 lg:grid-cols-3 gap-x-2 text-xs lg:text-base">
                                                 <nuxt-link :to="`/properties/${el.id}`" class="border px-2 py-1 rounded text-center hover:bg-gray-900 hover:text-white">View</nuxt-link>
-                                                <button class="border px-2 py-1 rounded hover:bg-gray-900 hover:text-white">Edit</button>
-                                                <button class="border px-2 py-1 rounded hover:bg-gray-900 hover:text-white">Delete</button>
+                                                <button class="hidden lg:block border px-2 py-1 rounded hover:bg-gray-900 hover:text-white">Edit</button>
+                                                <button class="hidden lg:block border px-2 py-1 rounded hover:bg-gray-900 hover:text-white">Delete</button>
                                             </td>
 
                                         </tr>
@@ -109,8 +115,18 @@ export default {
             loading: true
         }
     },
+    computed: {
+        menu() {
+            return store.state.resource.menu
+        }
+    },
 
     methods: {
+        manageSidebar(status) {
+            store.commit('resource/set', {
+                menu: status
+            })
+        },
         async init() {
 
             let res = await store.dispatch('resource/fetch', {

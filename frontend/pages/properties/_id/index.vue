@@ -7,7 +7,7 @@
 
             <span class="col-span-5 flex items-center grid grid-cols-1">
                 <div>
-                    <span @click="manageSidebar(true)" class="mr-5 lg:hidden " :class="`${menu == true ? 'block' : ''}`">
+                    <span v-if="generalAccess == false" @click="manageSidebar(true)" class="mr-5 lg:hidden " :class="`${menu == true ? 'block' : ''}`">
                         <Icon :object="{title: 'mobile-menu', class: 'h-5 w-5 text-black'}" />
                     </span>
                     <nuxt-link :to="`/properties`" v-if="generalAccess == false" class="text-gray-600">Properties</nuxt-link>
@@ -37,7 +37,7 @@
             </button>
         </div>
 
-        <main class="px-5 lg:px-24 py-10 bg-gray-50" style="min-height: 90vh;">
+        <main class="px-5 py-5 lg:px-24 lg:py-10 bg-gray-50" :class="`${generalAccess == false ? '' : 'px-2'}`" style="min-height: 90vh;">
             <div>
                 <div class="sm:flex sm:items-center mb-5">
                     <div class="sm:flex-auto">
@@ -55,19 +55,19 @@
                 </div>
 
                 <div class=" flex flex-col w-full">
-                    <div class="-my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                    <div class="px-10 lg:px-0 -my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                        <div class="inline-block min-w-full align-middle md:px-6 lg:px-8">
                             <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg w-full">
                                 <table class="min-w-full divide-y divide-gray-300 w-full">
                                     <thead class="w-full">
                                         <tr class="grid grid-cols-12 w-full">
-                                            <th class="col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
+                                            <th class="col-span-5 lg:col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
                                                 Trap Id
                                             </th>
-                                            <th class="col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
+                                            <th class="col-span-2 py-3.5 text-gray-900 text-center px-6 text-xs sm:text-base">
                                                 Status
                                             </th>
-                                            <th class="col-span-3 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
+                                            <th class="hidden lg:block col-span-3 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
                                                 Activity Date
                                             </th>
                                             <th class="hidden lg:block col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
@@ -89,18 +89,18 @@
                                     </tbody>
                                     <tbody v-else class="divide-y divide-gray-200 bg-white">
                                         <tr v-for="(trap, index) in property.traps" v-bind:key="index" class="w-full grid grid-cols-12">
-                                            <td class="col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
+                                            <td class="col-span-5 col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
                                                 {{ trap.trap_site_id }}
                                             </td>
-                                            <td class="col-span-2 py-3.5 text-gray-900 text-left px-6 flex text-xs sm:text-base">
-                                                <span v-if="getTheLatestEntry(trap)[0].target_spp == 'Absent'" class="p-1 rounded-full bg-green-600 h-8 w-8 flex items-center justify-center text-white">
+                                            <td class="col-span-2 py-3.5 text-gray-900 px-6 flex text-xs sm:text-base text-center w-full">
+                                                <span v-if="getTheLatestEntry(trap)[0].target_spp == 'Absent'" class="p-1 rounded-full bg-green-600 h-5 w-5 flex items-center justify-center text-white">
                                                     <Icon :object="{title: 'check', class: 'h-5 w-5'}" />
                                                 </span>
-                                                <span v-else class="p-1 rounded-full bg-red-600 h-8 w-8 flex items-center justify-center text-white">
+                                                <span v-else class="p-1 rounded-full bg-red-600 h-5 w-5 flex items-center justify-center text-white">
                                                     <Icon :object="{title: 'x', class: 'h-5 w-5'}" />
                                                 </span>
                                             </td>
-                                            <td class="col-span-3 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
+                                            <td class="hidden lg:block  col-span-3 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
                                                 {{ getTheLatestEntry(trap)[0].activity_date}}
                                             </td>
                                             <td class="hidden lg:block col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
@@ -188,7 +188,6 @@ export default {
 
     mounted() {
         this.init();
-
         this.$route.query.generalAccess != undefined ? this.generalAccess = true : null
     }
 }

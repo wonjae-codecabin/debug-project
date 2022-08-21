@@ -29,7 +29,7 @@
             </button>
         </div>
 
-        <main class="px-10 py-10 bg-gray-50" style="min-height: 90vh;">
+        <main class="px-10 py-5 lg:py-10 bg-gray-50" style="min-height: 90vh;">
 
             <div>
                 <div class="sm:flex sm:items-center mb-5">

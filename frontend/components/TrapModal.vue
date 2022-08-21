@@ -33,16 +33,16 @@
                                 <table class="min-w-full divide-y divide-gray-300 w-full">
                                     <thead class="w-full">
                                         <tr class="grid grid-cols-12 w-full">
-                                            <th class="col-span-2 py-3.5 text-gray-900 text-left px-6">
+                                            <th class="col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs lg:text-base">
                                                 Status
                                             </th>
-                                            <th class="col-span-3 py-3.5 text-gray-900 text-left px-6">
+                                            <th class="col-span-5 lg:col-span-3 py-3.5 text-gray-900 text-left px-6 text-xs lg:text-base">
                                                 Activity Date
                                             </th>
-                                            <th class="col-span-4 py-3.5 text-gray-900 text-left px-6">
+                                            <th class="hidden lg:block col-span-4 py-3.5 text-gray-900 text-left px-6 text-xs lg:text-base">
                                                 Unique Identifier
                                             </th>
-                                            <th class="col-span-3 py-3.5 text-gray-900 text-left px-6">
+                                            <th class="col-span-3 py-3.5 text-gray-900 text-left px-6 text-xs lg:text-base">
 
                                             </th>
                                         </tr>
@@ -50,25 +50,25 @@
 
                                     <tbody class="divide-y divide-gray-200 bg-white">
                                         <tr v-for="(entry, index) in activeObject.entries" v-bind:key="index" class="w-full grid grid-cols-12">
-                                            <td class="col-span-2 py-3.5 text-gray-900 text-left px-6">
-                                                <span v-if="entry.target_spp == 'Absent'" class="p-1 rounded-full bg-green-600 h-8 w-8 flex items-center justify-center text-white">
+                                            <td class="col-span-2 py-3.5 text-gray-900 text-left px-6 flex items-center">
+                                                <span v-if="entry.target_spp == 'Absent'" class="p-1 rounded-full bg-green-600 h-5 w-5 flex items-center justify-center text-white">
                                                     <Icon :object="{title: 'check', class: 'h-5 w-5'}" />
                                                 </span>
-                                                <span v-else class="p-1 rounded-full bg-red-600 h-8 w-8 flex items-center justify-center text-white">
+                                                <span v-else class="p-1 rounded-full bg-red-600 h-5 w-5 flex items-center justify-center text-white">
                                                     <Icon :object="{title: 'x', class: 'h-5 w-5'}" />
                                                 </span>
                                             </td>
-                                            <td class="col-span-3 py-3.5 text-gray-900 text-left px-6 flex">
+                                            <td class="col-span-5 lg:col-span-3 py-3.5 text-gray-900 text-left px-6 flex text-xs lg:text-base items-center flex">
                                                 {{ entry.activity_date }}
                                             </td>
-                                            <td class="col-span-4 py-3.5 text-gray-900 text-left px-6">
+                                            <td class="hidden lg:block col-span-4 py-3.5 text-gray-900 text-left px-6 text-xs lg:text-base flex items-center">
                                                 {{ entry.unique_identifier}}
                                             </td>
-                                            <td class="col-span-3 py-3.5 text-gray-900">
-                                                <button v-if="entry.target_spp == 'Present'" @click="setActiveEntry(entry), step = 1" class="border px-3 rounded text-sm py-2 bg-gray-900 text-white barlow-medium">
+                                            <td class="col-span-4 lg:col-span-3 py-3.5 text-gray-900 text-xs lg:text-base">
+                                                <button v-if="entry.target_spp == 'Present'" @click="setActiveEntry(entry), step = 1" class="border px-3 rounded py-2 bg-gray-900 text-white text-xs lg:text-base">
                                                     Corrective Action
                                                 </button>
-                                                <button v-else class="border px-3 rounded text-sm py-2 bg-gray-200 text-gray-400 border barlow-medium">
+                                                <button v-else class="border px-3 rounded py-2 bg-gray-200 text-gray-400 border text-xs lg:text-base">
                                                     Corrective Action
                                                 </button>
                                             </td>

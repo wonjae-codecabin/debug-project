@@ -124,6 +124,7 @@
             </div>
 
         </main>
+         <Footer />
     </div>
     <TrapModal v-show="showModal" @close="close" />
 </div>

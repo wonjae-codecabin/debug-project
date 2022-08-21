@@ -1,5 +1,5 @@
 <template>
-<div v-if="property != {}">
+<div>
     <Sidebar v-if="generalAccess == false" />
     <div class="h-screen border z-50" :class="generalAccess == false ? 'lg:ml-48': ''">
 

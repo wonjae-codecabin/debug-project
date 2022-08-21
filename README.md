@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/wonjae-codecabin/debug-project">
-    <img src="https://res.cloudinary.com/dxmgdmeup/image/upload/v1660980021/imageedit_2_3299075995_bwaqsu.png" alt="Logo" width="80" height="80">
+    <img src="https://res.cloudinary.com/dxmgdmeup/image/upload/v1660980021/imageedit_2_3299075995_bwaqsu.png" alt="Logo" width="100">
   </a>
 
 </div>

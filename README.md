@@ -8,13 +8,15 @@
 
 </div>
 
+## Live Demo
+<a href="https://app.debugsa.info" target="_blank">
+  Check out our live demo  
+</a>
+
 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<a href="https://app.debugsa.info">
-Live Demo
-</a>
 DebugSA is the solution that will support South Australia to win the fight on fruit flies. 
 Whilst the software has been targeted towards a solution to support South Australian fruit fly management, this solution can be used to support any future environmental impact or disease outbreak across the country. 
 

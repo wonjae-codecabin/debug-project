@@ -60,7 +60,7 @@
                             <div class="overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg w-full">
                                 <table class="min-w-full divide-y divide-gray-300 w-full">
                                     <thead class="w-full">
-                                        <tr class="grid grid-cols-12 w-full">
+                                        <tr class="grid grid-cols-12 w-full border-t">
                                             <th class="col-span-5 lg:col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
                                                 Trap Id
                                             </th>
@@ -71,7 +71,7 @@
                                                 Activity Date
                                             </th>
                                             <th class="hidden lg:block col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
-                                                Result
+                                                Corrective Action
                                             </th>
                                             <th class="col-span-3 py-3.5 text-gray-900 text-left px-6">
 
@@ -103,8 +103,8 @@
                                             <td class="hidden lg:block  col-span-3 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
                                                 {{ getTheLatestEntry(trap)[0].activity_date}}
                                             </td>
-                                            <td class="hidden lg:block col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
-                                                {{ getTheLatestEntry(trap)[0].corrective_action_msg != null ? 'Completed' : '' }}
+                                            <td class="hidden lg:block col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base text-center">
+                                                {{ getTheLatestEntry(trap)[0].corrective_action_msg != null ? 'Completed' : ' - ' }}
                                             </td>
                                             <td class="col-span-5 lg:col-span-3 py-3.5 text-gray-900 px-6 grid grid-cols-1 lg:grid-cols-3 gap-x-2 text-xs sm:text-base">
                                                 <button class="border px-2 py-1 rounded hover:bg-gray-900 hover:text-white" @click="setActive(trap, getTheLatestEntry(trap)), showModal = true">View</button>

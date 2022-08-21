@@ -1,6 +1,6 @@
 <template>
 <!-- This example requires Tailwind CSS v2.0+ -->
-<div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+<div class="relative z-50" aria-labelledby="modal-title" role="dialog" aria-modal="true">
 
     <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity"></div>
 

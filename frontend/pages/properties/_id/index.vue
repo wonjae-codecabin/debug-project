@@ -1,22 +1,27 @@
 <template>
-<div v-if="property != {}" >
+<div v-if="property != {}">
     <Sidebar v-if="generalAccess == false" />
     <div class="h-screen border z-50" :class="generalAccess == false ? 'lg:ml-48': ''">
 
         <div class="py-5 px-10 rounded w-full barlow-bold text-base lg:text-2xl border-b bg-white rounded-tl-3xl uppercase grid grid-cols-6 top-0">
-         
 
-            <span class="col-span-5 flex items-center">
-                <span @click="manageSidebar(true)" class="mr-5 lg:hidden " :class="`${menu == true ? 'block' : ''}`">
-                    <Icon :object="{title: 'mobile-menu', class: 'h-5 w-5 text-black'}" />
+            <span class="col-span-5 flex items-center grid grid-cols-1">
+                <div>
+                    <span @click="manageSidebar(true)" class="mr-5 lg:hidden " :class="`${menu == true ? 'block' : ''}`">
+                        <Icon :object="{title: 'mobile-menu', class: 'h-5 w-5 text-black'}" />
+                    </span>
+                    <nuxt-link :to="`/properties`" v-if="generalAccess == false" class="text-gray-600">Properties</nuxt-link>
+                    <span class="text-gray-600" v-else>Properties</span>
+                    <span> > </span>
+                    <span>{{ property.town_or_suburb}}</span>
+                </div>
+
+                <span class="text-xs text-gray-400 barlow-light">
+                    This view provides details of all the traps deployed on a particular property and the activity status of each trap
                 </span>
-                <nuxt-link :to="`/properties`" v-if="generalAccess == false" class="text-gray-600">Properties</nuxt-link>
-                <span class="text-gray-600" v-else>Properties</span>
-                <span> > </span>
-                <span>{{ property.town_or_suburb}}</span>
             </span>
 
-            <button v-if="generalAccess == false"  type="button" class="hidden lg:block col-span-1 group w-full bg-white rounded-md px-3.5 py-2 text-sm text-left font-medium text-gray-700 bg-white" x-ref="button">
+            <button v-if="generalAccess == false" type="button" class="hidden lg:block col-span-1 group w-full bg-white rounded-md px-3.5 py-2 text-sm text-left font-medium text-gray-700 bg-white" x-ref="button">
                 <span class="flex w-full justify-between items-center">
                     <span class="flex min-w-0 items-center justify-between space-x-3">
                         <img class="w-10 h-10 bg-white rounded-full flex-shrink-0" src="https://source.unsplash.com/random/?profile,man" alt="">
@@ -42,7 +47,7 @@
                                 <circle cx="11" cy="11" r="6"></circle>
                             </svg><span class="flex-auto">Quick search...</span></button>
                     </div>
-                    <div v-if="generalAccess == false"  class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+                    <div v-if="generalAccess == false" class="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
                         <button type="button" class="inline-flex items-center justify-center rounded-md border border-transparent px-4 py-2 text-sm font-medium text-white shadow-sm bg-gray-900">
                             Add Trap
                         </button>
@@ -103,8 +108,8 @@
                                             </td>
                                             <td class="col-span-5 lg:col-span-3 py-3.5 text-gray-900 px-6 grid grid-cols-1 lg:grid-cols-3 gap-x-2 text-xs sm:text-base">
                                                 <button class="border px-2 py-1 rounded hover:bg-gray-900 hover:text-white" @click="setActive(trap, getTheLatestEntry(trap)), showModal = true">View</button>
-                                                <button  v-if="generalAccess == false" class="hidden lg:block border px-2 py-1 rounded hover:bg-gray-900 hover:text-white">Edit</button>
-                                                <button  v-if="generalAccess == false" class="hidden lg:block  border px-2 py-1 rounded hover:bg-gray-900 hover:text-white">Delete</button>
+                                                <button v-if="generalAccess == false" class="hidden lg:block border px-2 py-1 rounded hover:bg-gray-900 hover:text-white">Edit</button>
+                                                <button v-if="generalAccess == false" class="hidden lg:block  border px-2 py-1 rounded hover:bg-gray-900 hover:text-white">Delete</button>
                                             </td>
 
                                         </tr>
@@ -139,8 +144,8 @@ export default {
         }
     },
 
-    computed:{
-        menu(){
+    computed: {
+        menu() {
             return store.state.resource.menu
         }
     },

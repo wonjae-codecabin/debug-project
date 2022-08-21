@@ -33,8 +33,41 @@
                     </span>
                 </nuxt-link>
             </div>
+             <div class="w-full text-base pt-5 px-3 cursor-pointer">
+                <a href="https://fruitfly.sa.gov.au/" target="_blank" class="flex w-full gap-x-3 items-center barlow-medium text-sm">
+                    <span>
+                        <Icon :object="{title:'globe', class: 'h-5 w-5 '}" />
+                    </span>
+                    <span class="">
+                        Resources
+                    </span>
+                </a>
+            </div>
+             <div class="w-full text-base pt-5 px-3 cursor-pointer">
+                <a href="https://www.sa.gov.au/topics/about-sa/directories/customer-service-centres/locations-and-opening-hours#:~:text=Call%20Service%20SA%20Monday%20to,am%20and%205%3A00%20pm" target="_blank" class="flex w-full gap-x-3 items-center barlow-medium text-sm">
+                    <span>
+                        <Icon :object="{title:'contact', class: 'h-5 w-5 '}" />
+                    </span>
+                    <span class="">
+                        Contact
+                    </span>
+                </a>
+            </div>
+              <div class="w-full text-base pt-5 px-3 cursor-pointer">
+                <a href="https://www.preventfruitfly.com.au/news/" target="_blank" class="flex w-full gap-x-3 items-center barlow-medium text-sm">
+                    <span>
+                        <Icon :object="{title:'news-paper', class: 'h-5 w-5 '}" />
+                    </span>
+                    <span class="">
+                        News
+                    </span>
+                </a>
+            </div>
+
+
+            
         </div>
-        <div class="flex items-end pb-20">
+        <div class="flex items-end pb-10">
             <div class="w-full text-base pt-5 px-3 cursor-pointer">
                 <nuxt-link :to="`/signin`" class="flex w-full gap-x-3 items-center barlow-medium text-sm">
                     <span>

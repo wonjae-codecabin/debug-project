@@ -3,7 +3,9 @@
   <div class="sm:flex sm:items-center">
     <div class="sm:flex-auto">
       <h1 class="text-xl font-semibold text-gray-900">Corrective Actions</h1>
-      <p class="mt-2 text-sm text-gray-700">A list of all the users in your account including their name, title, email and role.</p>
+      <p class="mt-2 text-sm text-gray-700">
+          This list highlights the required corrective actions from growers following recent identification of active fruit flies
+      </p>
     </div>
   
   </div>

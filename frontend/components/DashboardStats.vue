@@ -4,11 +4,13 @@
     <h3 class="text-lg leading-6 font-medium text-gray-900">Last 30 days</h3>
     <dl class="mt-5 grid grid-cols-1 rounded-lg bg-white overflow-hidden divide-y divide-gray-200 md:grid-cols-3 md:divide-y-0 gap-x-5 divide-x">
         <div class="px-4 py-5 sm:p-6">
-            <dt class="text-base font-normal text-gray-900">Total flies found</dt>
+            <dt class="text-base font-normal text-gray-900">
+                Active fly traps
+            </dt>
             <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
                 <div class="flex items-baseline text-2xl font-semibold ">
-                    71
-                    <span class="ml-2 text-sm font-medium text-gray-500"> from 32 </span>
+                    6
+                    <span class="ml-2 text-sm font-medium text-gray-500"> out of 800 </span>
                 </div>
 
                 <div class="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800 md:mt-2 lg:mt-0">
@@ -23,11 +25,11 @@
         </div>
 
         <div class="px-4 py-5 sm:p-6">
-            <dt class="text-base font-normal text-gray-900">Avg. Open Rate</dt>
+            <dt class="text-base font-normal text-gray-900">Avg. Activity per Trap</dt>
             <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
                 <div class="flex items-baseline text-2xl font-semibold ">
-                    58.16%
-                    <span class="ml-2 text-sm font-medium text-gray-500"> from 56.14% </span>
+                    1.16%
+                    <!-- <span class="ml-2 text-sm font-medium text-gray-500"> from 56.14% </span> -->
                 </div>
 
                 <div class="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800 md:mt-2 lg:mt-0">
@@ -42,11 +44,11 @@
         </div>
 
         <div class="px-4 py-5 sm:p-6">
-            <dt class="text-base font-normal text-gray-900">Avg. Corrective Action Rate</dt>
+            <dt class="text-base font-normal text-gray-900">Outstanding corrective actions</dt>
             <dd class="mt-1 flex justify-between items-baseline md:block lg:flex">
                 <div class="flex items-baseline text-2xl font-semibold ">
                     24.57%
-                    <span class="ml-2 text-sm font-medium text-gray-500"> from 28.62% </span>
+                   
                 </div>
 
                 <div class="inline-flex items-baseline px-2.5 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800 md:mt-2 lg:mt-0">

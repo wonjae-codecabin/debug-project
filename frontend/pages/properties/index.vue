@@ -11,6 +11,8 @@
                 </span>
                 <span>
                     Properties
+                    <br>
+                    <span class="text-xs text-gray-400 barlow-light">This view provides a list of the properties and their live fruit fly activity status for the traps on the property</span>
                 </span>
             </span>
             <button type="button" class="hidden lg:block col-span-1 group w-full bg-white rounded-md px-3.5 py-2 text-sm text-left font-medium text-gray-700 bg-white" x-ref="button">
@@ -56,12 +58,16 @@
                                     <thead class="w-full">
                                         <tr class="grid grid-cols-12 w-full">
 
-                                            <th class="col-span-7 py-3.5 text-gray-900 text-left px-6 text-xs lg:text-base">
+                                            <th class="col-span-5 py-3.5 text-gray-900 text-left px-6 text-xs lg:text-base">
                                                 Name
+                                            </th>
+                                            <th class="col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs lg:text-base">
+                                                Status
                                             </th>
                                             <th class="col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs lg:text-base">
                                                 Number of traps
                                             </th>
+                                           
                                             <th class="col-span-3 py-3.5 text-gray-900 text-left px-6">
 
                                             </th>
@@ -77,8 +83,16 @@
                                     </tbody>
                                     <tbody v-else class="divide-y divide-gray-200 bg-white ">
                                         <tr v-for="(el, index) in items" v-bind:key="index" class="w-full grid grid-cols-12 text-xs lg:text-base">
-                                            <td class="col-span-7 py-3.5 text-gray-900 text-left px-6">
+                                            <td class="col-span-5 py-3.5 text-gray-900 text-left px-6">
                                                 {{ el.town_or_suburb }}
+                                            </td>
+                                            <td class="col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs lg:text-base">
+                                                  <span v-if="el.traps.length < 50" class="p-1 rounded-full bg-green-600 h-8 w-8 flex items-center justify-center text-white">
+                                                    <Icon :object="{title: 'check', class: 'h-5 w-5'}" />
+                                                </span>
+                                                <span v-else class="p-1 rounded-full bg-red-600 h-8 w-8 flex items-center justify-center text-white">
+                                                    <Icon :object="{title: 'x', class: 'h-5 w-5'}" />
+                                                </span>
                                             </td>
                                             <td class="col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs lg:text-base">
                                                 {{ el.traps.length }}

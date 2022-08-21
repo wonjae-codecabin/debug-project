@@ -97,7 +97,7 @@
 
                                     <span class="text-red-600 barlow-medium">
                                         Suggestion:
-                                    </span> ipsum dolor sit amet consectetur adipisicing elit. Accusamus non ipsum, vitae labore libero odio deserunt aut delectus. At, consequatur.
+                                    </span> As a land owner in South Australia you have a responsibility to take appropriate and prompt action regarding any identified fruit fly activity on your property. Please ensure the below correct action report is complete within 12 hours of receipt, to notify Government Departments of your actions.
 
                                 </div>
                                 <div class="space-y-8 divide-y divide-gray-200">

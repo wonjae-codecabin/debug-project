@@ -13,7 +13,7 @@ export default {
         return {
             options: {
                 title: {
-                    text: "Weekly Chart"
+                    text: "Fruit Fly Activity Analysis",
                 },
                 theme: {
                     monochrome: {
@@ -35,7 +35,7 @@ export default {
                 },
                 yaxis: {
                     title: {
-                        text: 'Number of fruit flies',
+                        text: 'Number of active traps',
                         offsetY: 20,
                     },
                 },

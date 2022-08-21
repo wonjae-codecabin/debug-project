@@ -64,7 +64,7 @@
                                             <th class="col-span-5 lg:col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
                                                 Trap Id
                                             </th>
-                                            <th class="col-span-2 py-3.5 text-gray-900 text-center px-6 text-xs sm:text-base">
+                                            <th class="col-span-2 py-3.5 text-left text-gray-900  px-6 text-xs sm:text-base">
                                                 Status
                                             </th>
                                             <th class="hidden lg:block col-span-3 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
@@ -89,7 +89,7 @@
                                     </tbody>
                                     <tbody v-else class="divide-y divide-gray-200 bg-white">
                                         <tr v-for="(trap, index) in property.traps" v-bind:key="index" class="w-full grid grid-cols-12">
-                                            <td class="col-span-5 col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
+                                            <td class="col-span-5 lg:col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
                                                 {{ trap.trap_site_id }}
                                             </td>
                                             <td class="col-span-2 py-3.5 text-gray-900 px-6 flex text-xs sm:text-base text-center w-full">

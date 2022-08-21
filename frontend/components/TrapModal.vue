@@ -32,7 +32,7 @@
                             <div class="overflow-y-scroll border rounded-lg">
                                 <table class="min-w-full divide-y divide-gray-300 w-full">
                                     <thead class="w-full">
-                                        <tr class="grid grid-cols-12 w-full">
+                                        <tr class="grid grid-cols-12 w-full border-t">
                                             <th class="col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs lg:text-base">
                                                 Status
                                             </th>

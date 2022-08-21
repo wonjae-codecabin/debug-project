@@ -20,9 +20,9 @@ Whilst the software has been targeted towards a solution to support South Austra
 
 ### Prerequisites
 
-Frontend - Vue.js & NuxtJs, TailwindCss
-Backend - Ruby on Rails,
-Dataset - [https://docs.google.com/spreadsheets/d/1vRu6TU1tRKpO8wSxeLFp7z7g1MEFeVJ4/edit?rtpof=true&sd=true#gid=1932235677](https://docs.google.com/spreadsheets/d/1vRu6TU1tRKpO8wSxeLFp7z7g1MEFeVJ4/edit?rtpof=true&sd=true#gid=1932235677)
+Frontend - Vue.js & NuxtJs, TailwindCss <br>
+Backend - Ruby on Rails,<br>
+Dataset - [https://docs.google.com/spreadsheets/d/1vRu6TU1tRKpO8wSxeLFp7z7g1MEFeVJ4/edit?rtpof=true&sd=true#gid=1932235677](https://docs.google.com/spreadsheets/d/1vRu6TU1tRKpO8wSxeLFp7z7g1MEFeVJ4/edit?rtpof=true&sd=true#gid=1932235677)<br>
 Relevant Links - [https://web.archive.org/web/20220310223745/https://www.fruitfly.sa.gov.au/news_and_resources/updates_and_newsletters/aerial_sterile_fruit_fly_release](https://web.archive.org/web/20220310223745/https://www.fruitfly.sa.gov.au/news_and_resources/updates_and_newsletters/aerial_sterile_fruit_fly_release)
 
 <!-- LICENSE -->

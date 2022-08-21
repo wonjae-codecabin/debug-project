@@ -71,7 +71,7 @@
                                                 Activity Date
                                             </th>
                                             <th class="hidden lg:block col-span-2 py-3.5 text-gray-900 text-left px-6 text-xs sm:text-base">
-                                                Corrective Action
+                                                Result
                                             </th>
                                             <th class="col-span-3 py-3.5 text-gray-900 text-left px-6">
 
